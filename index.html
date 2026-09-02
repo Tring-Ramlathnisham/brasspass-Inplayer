@@ -40,18 +40,18 @@
 
 
 
-  <div id="nav-wrapper" style="background-color:#fff;">
+  <div id="nav-wrapper">
     <div class="nav-container">
       <a href="#nav-wrapper" class="nav-logo page-scroll">
         <img class="logo" src="img/logo.png" alt="logo">
         <!-- <b>CONFERENCE </b> -->
       </a>
       <ul id="menu" class="animated slideOutUp">
-        <li> <a href="#videos" class="page-scroll" style="color:black;">Watch</a> </li>
-        <li> <a href="#faq" class="page-scroll" style="color:black;">FAQ</a> </li>
-        <li> <a href="#footer" class="page-scroll" style="color:black;">Contact</a> </li>
-        <li> <a href="#" class="inplayer-paywall-login" style="color:black;">Login</a> </li>
-        <li> <a href="#" class="inplayer-paywall-logout" style="color:black;">Logout</a> </li>
+        <li> <a href="#videos" class="page-scroll">Watch</a> </li>
+        <li> <a href="#about" class="page-scroll">Why BrassPass</a> </li>
+        <li> <a href="#faq" class="page-scroll">Help</a> </li>
+        <li> <a href="#" class="inplayer-paywall-login nav-btn">Sign in</a> </li>
+        <li> <a href="#" class="inplayer-paywall-logout nav-btn">Logout</a> </li>
       </ul>
     </div>
     <button class="hamburger hamburger--squeeze" type="button" id="toggle">
@@ -62,18 +62,17 @@
   </div>
 
 
-  <div id="header" class="before-dark bg-img mh-70vh">
-    <div class="header-content section section-sm">
-      <br><br>
-      <div class="text">
-        <h2>LET US HELP YOU THINK DIFFERENTLY ABOUT BRASS BAND ENTERTAINMENT</h2>
-        <p style="color: #fff;">Great content from BrassPass.tv - The banding world, where you want it, when you want it and how you want it.
+  <div id="header" class="before-dark bg-img hero-immersive">
+    <div class="header-content section hero-content">
+      <div class="text hero-text">
+        <span class="hero-kicker">Live, Replay, and Archive</span>
+        <h1 class="hero-title">The world of brass,<br><em>beautifully played.</em></h1>
+        <p>Great content from BrassPass.tv - The banding world, where you want it, when you want it and how you want it.
         </p>
 
-        <div class="buttons">
-          <button class="white-btn page-scroll button" style="background-color: white;">
-          <a href="#package-items-29826" type="button" class="cta-btn page-scroll button" style="color: black;">GET ACCESS NOW</a>
-         </button>
+        <div class="buttons hero-buttons">
+          <a href="#package-items-29826" type="button" class="cta-btn page-scroll button">Explore the library</a>
+          <span class="hero-login-wrap"><a href="#" class="outline page-scroll button inplayer-paywall-login">Member sign in</a></span>
         </div>
 
       </div>
@@ -83,15 +82,15 @@
 
 
   <section class="package-container " id="videos">
-    <div class="heading mb-4 mw-1400 m-auto">
-      <span class="v-line"></span>
-      <h2 class="title" style="color: #CA992B;">Videos</h2>
-      <span class="v-line"></span>
+    <div class="heading mb-4 mw-1400 m-auto shelf-heading">
+      <h2 class="title">Videos</h2>
     </div>
     <div class="package" id="packages">
-    
-      
-      <div id="package-items-29826" class="package-items"></div>
+      <div class="shelf">
+        <button type="button" class="shelf-arrow shelf-arrow-left" aria-label="Scroll left">&#10094;</button>
+        <div id="package-items-29826" class="package-items"></div>
+        <button type="button" class="shelf-arrow shelf-arrow-right" aria-label="Scroll right">&#10095;</button>
+      </div>
       <div class="categories">
 
       </div>
@@ -102,7 +101,7 @@
     <div class="wrapper section">
       <div class="heading mb-4">
         <span class="v-line"></span>
-        <h2 class="title" style="text-align: center; color: #ca992b;">Why is our stream quality <br> going to WOW you?</h2>
+        <h2 class="title" style="text-align: center;">Why is our stream quality <br> going to WOW you?</h2>
         <span class="v-line"></span>
       </div>
       <p style="text-align: center;">We are using best in class recording partners and we are also having unlimited<br> bandwidth available via our
@@ -111,12 +110,12 @@
   </div>
 
     <!-- FAQ -->
-    <section style="background-color: #f1f1f1;">
+    <section style="background-color: var(--surface);">
     <div id="faq" class="section">
       <div class="faq-header">
         <div class="heading mb-4">
           <span class="v-line"></span>
-          <h2 class="title" style="color: #4d4d4d;">Need Help?</h2>
+          <h2 class="title" style="color: var(--text-muted);">Need Help?</h2>
           <span class="v-line"></span>
         </div>
       </div>

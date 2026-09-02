@@ -14,11 +14,21 @@ var config = {
 
 $(function () {
 
-	function createItemElement(assetId, assetPhoto, assetTitle, assetDesc) {
+	function formatAssetDate(rawDate) {
+		if (!rawDate) return "";
+		var d = new Date(rawDate);
+		if (isNaN(d.getTime())) return "";
+		return d.toLocaleDateString(undefined, { day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "2-digit" });
+	}
+
+	function createItemElement(assetId, assetPhoto, assetTitle, assetDate, assetDesc) {
+		var dateLabel = formatAssetDate(assetDate);
+		var dateHtml = dateLabel ? `<span class="item-date">${dateLabel}</span>` : "";
+
 		if (assetDesc) {
-			var output = `<div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"><a href="./item.html?id=${assetId}" class="overlay-link"></a></div><div class="item-label"><div class="name"><h3>${assetTitle}</h3>${assetDesc}</div></div></div>`;
+			var output = `<div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"><a href="./item.html?id=${assetId}" class="overlay-link"></a></div><div class="item-label"><div class="name"><h3>${assetTitle}</h3>${dateHtml}${assetDesc}</div></div></div>`;
 		} else {
-			var output = `<div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"><a href="./item.html?id=${assetId}" class="overlay-link"></a></div><div class="item-label"><div class="name"><h3>${assetTitle}</h3></div></div></div>`;
+			var output = `<div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"><a href="./item.html?id=${assetId}" class="overlay-link"></a></div><div class="item-label"><div class="name"><h3>${assetTitle}</h3>${dateHtml}</div></div></div>`;
 		}
 
 		return output;
@@ -92,7 +102,7 @@ $(function () {
 					  let fullDate = assetDate ? new Date(assetDate) : new Date();
 		  
 					  // Add the asset to the sortedAssets array with the full_date
-					  sortedAssets.push({ assetId, assetPhoto, assetTitle, fullDate });
+					  sortedAssets.push({ assetId, assetPhoto, assetTitle, assetDate, fullDate });
 					}
 		  
 					// Sort the assets by date (fullDate)
@@ -100,7 +110,7 @@ $(function () {
 		  
 					// Add the sorted assets to the output
 					for (let asset of sortedAssets) {
-					  output += createItemElement(asset.assetId, asset.assetPhoto, asset.assetTitle);
+					  output += createItemElement(asset.assetId, asset.assetPhoto, asset.assetTitle, asset.assetDate);
 					}
 		  
 					// Continue fetching the next page

@@ -60,6 +60,14 @@ $(function () {
 	
 
 
+	// horizontal video shelf arrows
+	$(document).on('click', '.shelf-arrow', function () {
+		var $shelf = $(this).siblings('.package-items');
+		var scrollAmount = Math.min($shelf.width() * 0.8, 600);
+		var dir = $(this).hasClass('shelf-arrow-left') ? -1 : 1;
+		$shelf.stop().animate({ scrollLeft: $shelf.scrollLeft() + (scrollAmount * dir) }, 350);
+	});
+
 	// back to top button
 
 	var offset = 550;

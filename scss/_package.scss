@@ -1,60 +1,105 @@
 .package-container{
   text-align: center;
-  background: #f1f1f1;
-  padding: 50px 30px;
+  background: var(--bg);
+  padding: 50px 0;
 
   a.overlay-link{
-    margin: 10px;
+    margin: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
   }
 
   .package{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      display: block;
+
+      .shelf{
+        position: relative;
+      }
 
       .package-items {
-        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x proximity;
+        scroll-behavior: smooth;
+        padding: 6px 50px 30px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar{
+          display: none;
+        }
       }
+
+      .shelf-arrow{
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background-color: var(--surface-2);
+        color: var(--text);
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 3;
+        opacity: .9;
+        @include transition;
+
+        &:hover{
+          opacity: 1;
+          background-color: var(--primary);
+          color: var(--primary-contrast);
+          border-color: var(--primary);
+        }
+      }
+
+      .shelf-arrow-left{ left: 12px; }
+      .shelf-arrow-right{ right: 12px; }
 
       .package-item {
         position: relative;
-        width: 100%;
-        max-width:285px;
-        background-color: #fff;
-        margin: 20px;
-        border: 1px solid #f1f1f1;
+        flex: 0 0 260px;
+        width: 260px;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius, 5px);
+        overflow: hidden;
+        scroll-snap-align: start;
+        text-align: left;
         @include transition;
-        display: inline-block;
 
         &:hover{
-          box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
-
-        }
-      }
-
-      @supports (display: grid){
-        #package-items {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(230px, 1fr))
-        }
-
-        .package-item {
-          width: 100%;
+          transform: translateY(-6px);
+          box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+          border-color: rgba(255,255,255,.25);
         }
       }
 
           .content {
-            height: 200px;
-            padding: 10px;
+            height: 150px;
+            padding: 0;
             background-size: cover;
             background-position: center;
             position: relative;
+
+            &::after{
+              content: "";
+              position: absolute;
+              inset: 0;
+              background-image: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%);
+            }
 
             &.active {
               opacity: 0.6; }
@@ -62,35 +107,43 @@
           } // content
 
           .item-label {
-            color: var(--primary);
-            align-items: center;
-            line-height: 23px;
+            color: var(--text);
+            align-items: flex-start;
+            line-height: 1.4em;
             text-align: left;
-            z-index: 11;
-            padding: 15px 20px;
+            z-index: 1;
+            padding: 14px 16px 18px;
             display: flex;
             flex-direction: column;
 
             font-family: $font1;
             font-weight: 600;
-            font-size: 19px;
+            font-size: 15px;
 
             h1, h2, h3, h4, p {
               font-family: $font1;
-              font-weight: 600;
-              font-size: 19px;
+              font-weight: 700;
+              font-size: 15px;
+              color: var(--text);
               margin: 0;
             }
+
+            .item-date{
+              display: block;
+              margin-top: 6px;
+              font-size: 12px;
+              font-weight: 400;
+              color: var(--text-muted);
+            }
+
             .inplayer-title{
               h1, h2, h3, h4, p{
                 font-weight: 600;
                 text-align: center;
-                color: #fff;
+                color: var(--text);
                 font-size: 1.5em;
               }
             }
-
-
 
             .buy-btn {
               color: var(--primary);

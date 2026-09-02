@@ -11,7 +11,7 @@ html{
 body{
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: var(--bg);
   font-size: 15px;
   font-family: $font1;
   -ms-font-smoothing: antialiased;
@@ -24,7 +24,8 @@ body{
     width: 100%;
     box-sizing: border-box;
     // font-family: $font1;
-    color: #111;
+    background-color: var(--bg);
+    color: var(--text);
     font-size: 1em;
     z-index: 100;
     display: flex;
@@ -59,7 +60,7 @@ body{
 
           a{
             font-family: $font1;
-            color: #fff;
+            color: var(--text);
             text-decoration: none;
             font-weight: 400;
 
@@ -86,7 +87,7 @@ body{
       .nav-logo{
         display: flex;
         align-items: center;
-        color: #fff;
+        color: var(--text);
 
         .logo{
           width: 90px;
@@ -121,7 +122,7 @@ body{
           justify-content: center;
           align-items: center;
           position: fixed;
-          background: #844763;
+          background: var(--surface);
           background-position: center;
           background-size: cover;
           height: 100vh;
@@ -134,7 +135,7 @@ body{
           li {
             margin: 20px 0;
             text-transform: uppercase;
-            color: #fff;
+            color: var(--text);
             font-weight: 700;
             font-size: 1.3em;
           }
@@ -162,7 +163,7 @@ body{
   }
 
     p{
-      color: #000;
+      color: var(--text-muted);
       margin: 0;
       font-size: 20px;
       padding: 5px 10px;

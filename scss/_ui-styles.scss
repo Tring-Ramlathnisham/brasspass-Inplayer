@@ -49,15 +49,15 @@
 }
 
 .bg-white{
-  background: #fff;
+  background: var(--surface);
 }
 
 .bg-dark{
-  background: var(--dark);
+  background: var(--bg);
 }
 
 .bg-lilac{
-  background: #e0e6f0;
+  background: var(--surface);
 }
 
 .before-dark::before{
@@ -68,6 +68,8 @@
   top: 0;
   left: 0;
   background-color: rgba(0,0,0,0.4);
+  background-image: linear-gradient(90deg, rgba(0,0,0,.88) 8%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.2) 80%),
+                     linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 35%);
 }
 
 .section{
@@ -79,7 +81,7 @@
 
 p{
   line-height: 1.7em;
-  color: #616161;
+  color: var(--text-muted);
   font-weight: 400;
   font-size: 18px;
 }
@@ -98,7 +100,7 @@ a {
 
   span{
     height: 1px;
-    background-color: #d1d1d1;
+    background-color: var(--border);
     flex: 1;
   }
 }
@@ -109,6 +111,16 @@ h1.title, h2.title, h3.title {
   text-transform: uppercase;
   color: var(--primary);
   font-weight: 400;
+}
+
+.shelf-heading{
+  justify-content: flex-start;
+  padding: 0 50px;
+
+  .title{
+    padding: 0;
+    font-size: 1.4em;
+  }
 }
 
 .container-title{
@@ -150,25 +162,26 @@ h1.title, h2.title, h3.title {
   @extend .button;
 
   background-color: transparent;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--text);
+  color: var(--text);
 
   &:hover{
-    background-color: #fff;
-    color: #222;
-    border-color: #fff;
+    background-color: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
   }
 }
 
 .white-btn{
   @extend .button;
-  border: none;
+  border: 1px solid var(--text);
 
-  background-color: rgba(255,255,255,.9);
-  color: #222;
+  background-color: transparent;
+  color: var(--text);
 
   &:hover, &:active, &:focus{
-    background-color: rgba(255,255,255,1);
+    background-color: var(--text);
+    color: var(--bg);
   }
 }
 
@@ -176,7 +189,7 @@ h1.title, h2.title, h3.title {
   @extend .button;
 
   background-color: var(--primary);
-  color: #fff;
+  color: var(--primary-contrast);
   border: none;
   margin: 20px 10px 30px;
 
@@ -188,6 +201,23 @@ h1.title, h2.title, h3.title {
 
 a.link{
   font-style: italic;
+}
+
+.nav-btn{
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 20px !important;
+  margin: 0 !important;
+
+  &:hover{
+    opacity: 1 !important;
+    background-color: var(--surface-2);
+    border-color: var(--text);
+  }
+}
+
+.hero-login-wrap{
+  display: inline-block;
 }
 
 //back to top button

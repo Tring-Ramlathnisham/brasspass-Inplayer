@@ -3,7 +3,7 @@
 
 	.inplayer-preview-box {
 		padding: 0;
-		background: #fff;
+		background: var(--surface);
 		text-align: center;
 		border: none;
 
@@ -16,7 +16,7 @@
 
 		.inplayer-itemdetails {
 			width: 100%;
-			color: #111;
+			color: var(--text);
 			bottom: 140px;
 
 			.inplayer-title {
@@ -25,7 +25,7 @@
 				h2,
 				h3 {
 					font-family: $font1;
-					color: #111;
+					color: var(--text);
 					font-weight: 600;
 					text-align: center;
 					font-size: 1.5em;

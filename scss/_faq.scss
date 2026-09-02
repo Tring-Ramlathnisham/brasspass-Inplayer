@@ -25,8 +25,8 @@
 
 				a.toggle {
 					display: block;
-					border: 1px solid rgba(39, 36, 35, 0.32);
-					color: #5f5f5f;
+					border: 1px solid var(--border);
+					color: var(--text-muted);
 					text-decoration: none;
 					padding: 15px 20px;
 					border-radius: 0.3em;
@@ -34,14 +34,14 @@
 					transition: all 0.3s ease-in-out;
 
 					&:hover {
-            // background: rgba(255, 255, 255, 0.1);
-						background: #e0e0e0;
+						background: var(--surface-2);
 					}
 
 					&.active {
 						border-bottom-left-radius: 0;
 						border-bottom-right-radius: 0;
 						font-weight: 500;
+						color: var(--text);
 					}
 				}
 
@@ -50,7 +50,7 @@
 					overflow: hidden;
 					display: none;
 					line-height: 1.5em;
-					border: 1px solid rgba(121, 89, 84, 0.32);
+					border: 1px solid var(--border);
 					border-bottom-right-radius: 0.3em;
 					border-bottom-left-radius: 0.3em;
 					border-top: none;

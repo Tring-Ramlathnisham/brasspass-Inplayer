@@ -6,8 +6,11 @@
   align-items: center;
   z-index: 0;
 
-min-height: 40vh;
+  min-height: 40vh;
 
+  &.hero-immersive{
+    min-height: 92vh;
+  }
 
   .header-content{
     height: 100%;
@@ -16,8 +19,17 @@ min-height: 40vh;
     padding: 20px 50px;
     position: relative;
 
+    &.hero-content{
+      display: flex;
+      align-items: center;
+      text-align: left;
+      flex: 1 1 0%;
+      min-width: 0;
+      max-width: 100%;
+    }
+
     .text{
-      color: #fff;
+      color: var(--text);
       font-family: $font1;
       text-align: center;
       padding: 30px 20px;
@@ -32,6 +44,47 @@ min-height: 40vh;
         max-width: 400px;
       }
 
+      &.hero-text{
+        text-align: left;
+        margin: 0;
+        max-width: 640px;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 0 20px;
+      }
+
+      .hero-kicker{
+        display: inline-block;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        &::before{
+          content: "— ";
+        }
+      }
+
+      .hero-title{
+        font-family: $font1;
+        font-weight: 800;
+        letter-spacing: 0;
+        margin: 0 0 24px;
+        font-size: 3.2em;
+        line-height: 1.15;
+        color: var(--text);
+
+        em{
+          font-style: italic;
+          font-weight: 400;
+          font-family: Georgia, 'Times New Roman', serif;
+          color: var(--primary);
+        }
+      }
+
       h1 {
         font-weight: 800;
         letter-spacing: 5px;
@@ -40,7 +93,7 @@ min-height: 40vh;
         font-size: 3em;
       }
       h2 {
-        color: #fff;
+        color: var(--text);
         font-weight: 800;
         letter-spacing: 5px;
         margin: 0;
@@ -52,7 +105,13 @@ min-height: 40vh;
       p{
         font-size: 20px;
         margin-bottom: 40px;
-        text-shadow: 1px 1px 10px #000;
+        text-shadow: none;
+        color: var(--text-muted);
+      }
+
+      &.hero-text p{
+        max-width: 520px;
+        font-size: 19px;
       }
 
       .buttons {
@@ -60,6 +119,10 @@ min-height: 40vh;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
+      }
+
+      &.hero-text .buttons{
+        justify-content: flex-start;
       }
     }
 
@@ -106,6 +169,9 @@ min-height: 40vh;
         h1 {
           font-size: 2.5em;
         }
+        .hero-title{
+          font-size: 2.4em;
+        }
       }
 
       .image{
@@ -142,6 +208,12 @@ min-height: 40vh;
         margin-top: 110px;
         h1{
           font-size: 1.5em;
+        }
+        .hero-title{
+          font-size: 1.8em;
+        }
+        .hero-buttons{
+          justify-content: center !important;
         }
       }
     }
