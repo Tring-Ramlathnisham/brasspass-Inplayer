@@ -60,6 +60,16 @@ $(function () {
 	
 
 
+	// FAQ category switch
+	$(document).on('click', '.faq-cat', function () {
+		var cat = $(this).data('cat');
+		$(this).closest('.faq-categories').find('.faq-cat').removeClass('active');
+		$(this).addClass('active');
+		var $panels = $(this).closest('.faq-layout').find('.faq-cat-panel');
+		$panels.removeClass('active');
+		$panels.filter('[data-cat="' + cat + '"]').addClass('active');
+	});
+
 	// horizontal video shelf arrows
 	$(document).on('click', '.shelf-arrow', function () {
 		var $shelf = $(this).siblings('.package-items');
