@@ -34,7 +34,9 @@ $(function () {
 		return output;
 	}
 
-	var paywall = new InplayerPaywall("4d23789a-8021-47c2-8f1d-d4efe11dd892", []);
+	var paywall = new InplayerPaywall("4d23789a-8021-47c2-8f1d-d4efe11dd892", [
+		// {options:{brandingId:"5026"}}
+	]);
 	setTimeout(function () {
 		if (getParameterByName("id")) {
 			$("#preview-item").html(
@@ -46,6 +48,9 @@ $(function () {
 			var paywall = new InplayerPaywall("4d23789a-8021-47c2-8f1d-d4efe11dd892", [
 				{
 					id: getParameterByName("id"),
+					// options:{
+					// 	brandingId: "5026",
+					// },
 				},
 			]);
 		}
@@ -110,7 +115,7 @@ $(function () {
 		  
 					// Add the sorted assets to the output
 					for (let asset of sortedAssets) {
-					  output += createItemElement(asset.assetId, asset.assetPhoto, asset.assetTitle, asset.assetDate);
+					  output += createItemElement(asset.assetId, asset.assetPhoto, asset.assetTitle);
 					}
 		  
 					// Continue fetching the next page

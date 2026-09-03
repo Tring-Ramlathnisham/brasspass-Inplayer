@@ -44,7 +44,7 @@
       </a>
       <ul id="menu" class="animated slideOutUp">
         <li> <a href="index.html">Home Page</a> </li>
-        <li> <a href="about.html" class="page-scroll">About Us</a> </li>
+        <!-- <li> <a href="about.html" class="page-scroll">About Us</a> </li> -->
         <li> <a href="#footer" class="page-scroll">Help</a> </li>
       </ul>
     </div>
@@ -311,8 +311,11 @@
       return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
     var paywall = new InplayerPaywall('4d23789a-8021-47c2-8f1d-d4efe11dd892', [{
-      id: getParameterByName('id')
-    }]);
+      id: getParameterByName('id'),
+      
+    }],
+    // {brandingId:"5026"}
+  );
     $('#preview-item').html('<div id="inplayer-' + getParameterByName('id') + '" class="inplayer-paywall"></div>');
 
   </script>
