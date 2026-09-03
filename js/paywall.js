@@ -8,7 +8,7 @@ function getParameterByName(name, url) {
 	return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 var config = {
-	packages: ["29826"],
+	packages: ["29826", "PACKAGE_ID_2"], // TODO: replace PACKAGE_ID_2 with the real second InPlayer package id
 	service_url: "https://services.inplayer.com",
 };
 

@@ -40,18 +40,18 @@
 
 
 
-  <div id="nav-wrapper" style="background-color:#fff;">
+  <div id="nav-wrapper" style="background-color: var(--bg-elevated);">
     <div class="nav-container">
       <a href="#nav-wrapper" class="nav-logo page-scroll">
         <img class="logo" src="img/logo.png" alt="logo">
         <!-- <b>CONFERENCE </b> -->
       </a>
       <ul id="menu" class="animated slideOutUp">
-        <li> <a href="#videos" class="page-scroll" style="color:black;">Watch</a> </li>
-        <li> <a href="#faq" class="page-scroll" style="color:black;">FAQ</a> </li>
-        <li> <a href="#footer" class="page-scroll" style="color:black;">Contact</a> </li>
-        <li> <a href="#" class="inplayer-paywall-login" style="color:black;">Login</a> </li>
-        <li> <a href="#" class="inplayer-paywall-logout" style="color:black;">Logout</a> </li>
+        <li> <a href="#videos" class="page-scroll">Watch</a> </li>
+        <li> <a href="#faq" class="page-scroll">FAQ</a> </li>
+        <li> <a href="#footer" class="page-scroll">Contact</a> </li>
+        <li> <a href="#" class="inplayer-paywall-login">Login</a> </li>
+        <li> <a href="#" class="inplayer-paywall-logout">Logout</a> </li>
       </ul>
     </div>
     <button class="hamburger hamburger--squeeze" type="button" id="toggle">
@@ -71,9 +71,7 @@
         </p>
 
         <div class="buttons">
-          <button class="white-btn page-scroll button" style="background-color: white;">
-          <a href="#package-items-29826" type="button" class="cta-btn page-scroll button" style="color: black;">GET ACCESS NOW</a>
-         </button>
+          <a href="#package-items-29826" class="white-btn page-scroll button">GET ACCESS NOW</a>
         </div>
 
       </div>
@@ -85,24 +83,27 @@
   <section class="package-container " id="videos">
     <div class="heading mb-4 mw-1400 m-auto">
       <span class="v-line"></span>
-      <h2 class="title" style="color: #CA992B;">Videos</h2>
+      <h2 class="title" style="color: var(--primary);">Videos</h2>
       <span class="v-line"></span>
     </div>
-    <div class="package" id="packages">
-    
-      
+    <div class="package">
+      <h3 class="package-group-title">Package One</h3>
       <div id="package-items-29826" class="package-items"></div>
-      <div class="categories">
-
-      </div>
     </div>
+
+    <div class="package">
+      <h3 class="package-group-title">Package Two</h3>
+      <div id="package-items-PACKAGE_ID_2" class="package-items"></div>
+    </div>
+
+    <div class="categories"></div>
   </section>
  <!-- <div class="about bg-white" id="about">-->
   <div class="section" id="about">
     <div class="wrapper section">
       <div class="heading mb-4">
         <span class="v-line"></span>
-        <h2 class="title" style="text-align: center; color: #ca992b;">Why is our stream quality <br> going to WOW you?</h2>
+        <h2 class="title" style="text-align: center; color: var(--primary);">Why is our stream quality <br> going to WOW you?</h2>
         <span class="v-line"></span>
       </div>
       <p style="text-align: center;">We are using best in class recording partners and we are also having unlimited<br> bandwidth available via our
@@ -111,12 +112,12 @@
   </div>
 
     <!-- FAQ -->
-    <section style="background-color: #f1f1f1;">
+    <section style="background-color: var(--bg-alt);">
     <div id="faq" class="section">
       <div class="faq-header">
         <div class="heading mb-4">
           <span class="v-line"></span>
-          <h2 class="title" style="color: #4d4d4d;">Need Help?</h2>
+          <h2 class="title" style="color: var(--text-muted);">Need Help?</h2>
           <span class="v-line"></span>
         </div>
       </div>
@@ -231,7 +232,7 @@
                 <p>Your password will be updated. Please login with your email address and new password.</p>
   
                 <p>If you do not receive a password reset token please contact us through our <a
-                  href="https://support.inplayer.com/" target="_blank">Support Center.</a></p>
+                  href="https://support.inplayer.com/" target="_blank" style="color: var(--primary)">Support Center.</a></p>
               </div>
   
               <div class="question">
@@ -264,7 +265,7 @@
                 <p>2. The fraud control system flagged the user as suspicious.</p>
                 <p>Please contact your bank.</p>
                 <p>For additional questions or assistance please visit our <a
-                    href="https://support.inplayer.com/" target="_blank">Support Center.</a></p>
+                    href="https://support.inplayer.com/" target="_blank" style="color: var(--primary)">Support Center.</a></p>
               </div>
   
               <div class="question">
@@ -277,7 +278,7 @@
               <div class="question">
                 <h3>Where can I find your Terms and Conditions?</h3>
                 <p>You can find InPlayer’s terms and conditions on the following link:</p>
-                <p> <a class="link" href="https://inplayer.com/terms/" target="_blank">https://inplayer.com/terms/ </a> </p>
+                <p> <a class="link" href="https://inplayer.com/terms/" target="_blank" style="color: var(--primary)">https://inplayer.com/terms/ </a> </p>
               </div>
             </div>
           </li>
